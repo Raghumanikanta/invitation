@@ -7,10 +7,11 @@
     
     // ========== YOUR IMAGE PATHS ==========
     const IMAGES = {
+        main1: "asset/circle-frame-CT2O1X8y.png",
         main: "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg",
         closing: "asset/WhatsApp%20Image%202026-04-20%20at%201.31.07%20PM%20(1).jpeg",
-        groom: "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg",
-        bride: "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg"
+        groom: "asset/Raghu%20(1).jpeg",
+        bride: "asset/harshitha.jpeg"
     };
     
     let audioElement = null;
@@ -132,7 +133,7 @@
                         <div class="invitation-circle-container">
                             <div class="invitation-circle-stack">
                                 <div class="circle-inner-plate" aria-hidden="true"></div>
-                                <img class="circle-frame-img" src="${IMAGES.main}" alt="Wedding frame" decoding="async" onerror="this.src='https://placehold.co/500x500/e3d4c4/b35f2b?text=Love'">
+                                <img class="circle-frame-img" src="${IMAGES.main1}" alt="Wedding frame" decoding="async" onerror="this.src='https://placehold.co/500x500/e3d4c4/b35f2b?text=Love'">
                                 <div class="invitation-circle">
                                     <h2>You're Invited!</h2>
                                     <p>Join us in making this day unforgettable!</p>
