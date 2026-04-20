@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raghu ❤️ Harshitha</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:#0b0b0b;
+      color:#f5d27a;
+      scroll-behavior:smooth;
+    }
+
+    html {
+      scroll-snap-type: y mandatory;
+    }
+
+    section {
+      min-height:100vh;
+      scroll-snap-align:start;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    h1 {
+      font-family:'Great Vibes', cursive;
+      font-size:clamp(2.5rem, 8vw, 5rem);
+    }
+
+    h2 {
+      font-family:'Playfair Display', serif;
+      font-size:clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom:10px;
+    }
+
+    .hero {
+      background:url('hero.jpg') center/cover no-repeat;
+      position:relative;
+    }
+
+    .hero::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+      position:relative;
+      z-index:2;
+    }
+
+    .countdown {
+      display:flex;
+      gap:20px;
+      margin-top:20px;
+    }
+
+    .countdown div {
+      border:1px solid #f5d27a;
+      padding:10px 15px;
+      border-radius:8px;
+    }
+
+    .btn {
+      margin-top:15px;
+      padding:10px 20px;
+      background:#f5d27a;
+      color:#000;
+      text-decoration:none;
+      border-radius:5px;
+      display:inline-block;
+    }
+
+    .timeline {
+      max-width:600px;
+    }
+
+    .event {
+      border-left:2px solid #f5d27a;
+      padding-left:15px;
+      margin:20px 0;
+      text-align:left;
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+      gap:10px;
+      width:100%;
+      max-width:900px;
+    }
+
+    .gallery img {
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      border-radius:10px;
+    }
+
+    .music-btn {
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#f5d27a;
+      color:#000;
+      border:none;
+      padding:10px;
+      border-radius:50%;
+      cursor:pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Raghu ❤️ Harshitha</h1>
+    <p>03 May 2026 | 07:38 AM</p>
+
+    <div class="countdown">
+      <div><span id="days"></span><p>Days</p></div>
+      <div><span id="hours"></span><p>Hours</p></div>
+      <div><span id="minutes"></span><p>Minutes</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section>
+  <h2 data-aos="fade-up">Our Beginning</h2>
+  <p data-aos="fade-up">Two hearts, one journey, and a lifetime to go...</p>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <h2 data-aos="fade-up">Events</h2>
+  <div class="timeline">
+    <div class="event" data-aos="fade-right">
+      <h3>Wedding</h3>
+      <p>03 May 2026 - 07:38 AM</p>
+      <p>Banjara Bhavan, Davanagere</p>
+    </div>
+
+    <div class="event" data-aos="fade-right">
+      <h3>Reception</h3>
+      <p>06 May 2026 - 10:30 AM</p>
+      <p>Ram Kishor Colony, Sindhanur</p>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section>
+  <h2 data-aos="fade-up">Venue</h2>
+  <p data-aos="fade-up">Banjara Bhavan, Vinayaka Badavane, Davanagere</p>
+  <a class="btn" href="https://maps.google.com/?q=Banjara+Bhavan+Davanagere" target="_blank">View Map</a>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <h2 data-aos="fade-up">Gallery</h2>
+  <div class="gallery">
+    <img src="img1.jpg" />
+    <img src="img2.jpg" />
+    <img src="img3.jpg" />
+  </div>
+</section>
+
+<!-- RSVP -->
+<section>
+  <h2 data-aos="fade-up">RSVP</h2>
+  <a class="btn" href="#">Confirm Attendance</a>
+</section>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  const targetDate = new Date("May 3, 2026 07:38:00").getTime();
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+  }, 1000);
+
+  const music = document.getElementById("music");
+  function toggleMusic() {
+    if (music.paused) music.play();
+    else music.pause();
+  }
+</script>
+
+</body>
+</html>
