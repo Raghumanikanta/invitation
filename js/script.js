@@ -7,7 +7,14 @@
     
     // ========== YOUR IMAGE PATHS ==========
     const IMAGES = {
+        main2: "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM%20(1).jpeg",
         main1: "asset/circle-frame-CT2O1X8y.png",
+        main3: "asset/WhatsApp Image 2026-04-20 at 1.31.04 PM (4).jpeg",
+        main4: "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM%20(2).jpeg",
+        main5: "asset/WhatsApp Image 2026-04-20 at 1.31.06 PM (1).jpeg",
+        main6: "asset/WhatsApp Image 2026-04-20 at 1.31.05 PM.jpeg",
+        main7: "asset/WhatsApp Image 2026-04-20 at 1.31.06 PM.jpeg",
+        main8: "asset/WhatsApp%20Image%202026-04-20%20at%209.07.34%20PM.jpeg",
         main: "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg",
         closing: "asset/WhatsApp%20Image%202026-04-20%20at%201.31.07%20PM%20(1).jpeg",
         groom: "asset/Raghu%20(1).jpeg",
@@ -111,7 +118,15 @@
     // ========== GALLERY IMAGES (using your asset) ==========
     function getGalleryHTML() {
         const gallerySrc = IMAGES.main;
-        const images = [gallerySrc, gallerySrc, gallerySrc, gallerySrc, gallerySrc, gallerySrc, gallerySrc, gallerySrc];
+        const gallerySrc1 = IMAGES.main2;
+        const gallerySrc2 = IMAGES.main3;
+        const gallerySrc3 = IMAGES.main4;
+        const gallerySrc4 = IMAGES.main5;
+        const gallerySrc5 = IMAGES.main6;
+        const gallerySrc6 = IMAGES.main7;
+        const gallerySrc7 = IMAGES.main8;
+        
+        const images = [gallerySrc, gallerySrc1, gallerySrc2, gallerySrc3, gallerySrc4, gallerySrc5, gallerySrc6, gallerySrc7];
         
         return images.map(src => `
             <figure class="gallery-marquee__slide">
