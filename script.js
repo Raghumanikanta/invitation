@@ -10,6 +10,12 @@
     let musicButton = null;
     let countdownInterval = null;
 
+    // Your image paths (from your original HTML)
+    const MAIN_IMAGE = "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg";
+    const CLOSING_IMAGE = "asset/WhatsApp%20Image%202026-04-20%20at%201.31.07%20PM%20(1).jpeg";
+    const GROOM_IMAGE = "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg";
+    const BRIDE_IMAGE = "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg";
+
     function pad(n) {
         return String(n).padStart(2, '0');
     }
@@ -88,11 +94,16 @@
         const root = document.getElementById('root');
         if (!root) return;
 
-        // Gallery images - using your asset folder
-        const galleryHTML = Array(8).fill().map(() => `
+        // Gallery images - using your asset images (repeated for marquee effect)
+        const galleryImages = [
+            MAIN_IMAGE, MAIN_IMAGE, MAIN_IMAGE, MAIN_IMAGE,
+            MAIN_IMAGE, MAIN_IMAGE, MAIN_IMAGE, MAIN_IMAGE
+        ];
+        
+        const galleryHTML = galleryImages.map(src => `
             <figure class="gallery-marquee__slide">
                 <div class="gallery-marquee__frame">
-                    <img src="asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg" alt="Wedding moment" decoding="async" onerror="this.src='https://placehold.co/400x500/f7ede3/b35f2b?text=Love'">
+                    <img src="${src}" alt="Wedding moment" decoding="async">
                 </div>
             </figure>
         `).join('');
@@ -106,7 +117,7 @@
                         <p class="landing-sub">Let's celebrate the best day of our life together!</p>
                     </div>
                     <div class="landing-card__photo">
-                        <img src="asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg" alt="Raghu manikanta & Harshitha" class="landing-card__photo-img" onerror="this.src='https://placehold.co/600x500/e3d4c4/b35f2b?text=Couple'">
+                        <img src="${MAIN_IMAGE}" alt="Raghu manikanta & Harshitha" class="landing-card__photo-img">
                         <div class="landing-card__photo-gradient"></div>
                     </div>
                     <div class="landing-after-photo">
@@ -167,7 +178,7 @@
                                 <p class="dress-code-row__names">Raghu manikanta</p>
                             </div>
                             <figure class="dress-code-polaroid">
-                                <img src="asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg" alt="Raghu manikanta" loading="lazy" onerror="this.src='https://placehold.co/400x400/e3d4c4/8b5a2b?text=Raghu'">
+                                <img src="${GROOM_IMAGE}" alt="Raghu manikanta" loading="lazy">
                             </figure>
                         </article>
                         <article class="dress-code-row">
@@ -175,7 +186,7 @@
                                 <p class="dress-code-row__names">Harshitha</p>
                             </div>
                             <figure class="dress-code-polaroid dress-code-polaroid--ccw">
-                                <img src="asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM.jpeg" alt="Harshitha" loading="lazy" onerror="this.src='https://placehold.co/400x400/e3d4c4/a55c2a?text=Harshitha'">
+                                <img src="${BRIDE_IMAGE}" alt="Harshitha" loading="lazy">
                             </figure>
                         </article>
                     </div>
@@ -196,7 +207,8 @@
                 
                 <section class="closing-message-card">
                     <div class="closing-message-card__image-wrap">
-                        <img src="asset/WhatsApp%20Image%202026-04-20%20at%201.31.07%20PM%20(1).jpeg" alt="Raghu manikanta & Harshitha" class="closing-message-card__image" onerror="this.src='https://placehold.co/800x400/e9dfd2/b5703a?text=Celebration'">
+                        <img src="${CLOSING_IMAGE}" alt="Raghu manikanta & Harshitha" class="closing-message-card__image">
+                        <div class="closing-message-card__image-gradient"></div>
                     </div>
                     <div class="closing-message-card__panel">
                         <p class="closing-message-card__script">Hope to see you there!</p>
