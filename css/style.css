@@ -1001,6 +1001,7 @@ body {
     transition: background .2s,transform .15s;
     display: grid;
     position: fixed;
+    display:none;
     box-shadow: 0 4px 14px #0000002e,0 2px 6px #00000014
 }
 
