@@ -10,7 +10,7 @@
         main2: "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM%20(1).jpeg",
         main1: "asset/circle-frame-CT2O1X8y.png",
         main3: "asset/WhatsApp Image 2026-04-20 at 1.31.04 PM (4).jpeg",
-        main4: "asset/WhatsApp%20Image%202026-04-20%20at%201.31.04%20PM%20(2).jpeg",
+        main4: "asset/WhatsApp Image 2026-04-20 at 1.31.07 PM (2).jpeg",
         main5: "asset/WhatsApp Image 2026-04-20 at 1.31.06 PM (1).jpeg",
         main6: "asset/WhatsApp Image 2026-04-20 at 1.31.05 PM.jpeg",
         main7: "asset/WhatsApp Image 2026-04-20 at 1.31.06 PM.jpeg",
