@@ -1,82 +1,114 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Raghu ❤️ Harshitha</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raghu Manikanta ❤️ Harshitha</title>
 
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
-
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Great+Vibes&family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<section class="hero">
-  <div class="hero-content" data-aos="fade-up">
-    <h1>Raghu ❤️ Harshitha</h1>
-    <p>03 May 2026 | 07:38 AM</p>
+<!-- HERO -->
 
-    <div class="countdown">
-      <div><span id="days"></span><p>Days</p></div>
-      <div><span id="hours"></span><p>Hours</p></div>
-      <div><span id="minutes"></span><p>Minutes</p></div>
-    </div>
+<section class="landing">
+  <h1>Raghu Manikanta ❤️ Harshitha</h1>
+  <p>We are inviting you to our Wedding!</p>
+  <p>Join us to celebrate our special day together!</p>
+</section>
+
+<img class="hero-img" src="https://via.placeholder.com/1200x600">
+
+<!-- TITLE -->
+
+<section class="section-title">
+  <h2>Our Journey</h2>
+  <p>Come celebrate the beginning of our forever with us</p>
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery">
+  <div class="gallery-track">
+    <img src="https://via.placeholder.com/200">
+    <img src="https://via.placeholder.com/200">
+    <img src="https://via.placeholder.com/200">
+    <img src="https://via.placeholder.com/200">
+    <img src="https://via.placeholder.com/200">
+
+```
+<!-- duplicate -->
+<img src="https://via.placeholder.com/200">
+<img src="https://via.placeholder.com/200">
+```
+
   </div>
 </section>
 
-<section>
-  <h2 data-aos="fade-up">Our Beginning</h2>
-  <p data-aos="fade-up">Two hearts, one journey...</p>
+<!-- LETTER -->
+
+<section class="letter">
+  <h2>Dear Friends & Family!</h2>
+  <p>
+    With great joy, we invite you to be part of our wedding celebrations.
+    Your presence will make our special day even more memorable.
+  </p>
 </section>
 
-<section>
-  <h2>Events</h2>
-  <div class="event">
+<!-- TIMELINE -->
+
+<section class="timeline">
+  <h2>Event Timeline</h2>
+
+  <div class="card">
     <h3>Wedding</h3>
-    <p>03 May 2026 - 07:38 AM</p>
-    <p>Banjara Bhavan, Davanagere</p>
+    <p>03 May 2026</p>
+    <p>07:38 AM</p>
+    <p>Banjara Bhavan, Vinayaka Badavane, Davanagere</p>
   </div>
 
-  <div class="event">
+  <div class="card">
     <h3>Reception</h3>
-    <p>06 May 2026 - 10:30 AM</p>
+    <p>06 May 2026</p>
+    <p>10:30 AM</p>
     <p>Ram Kishor Colony, Sindhanur</p>
+    <p>Contact: 9108308902</p>
   </div>
 </section>
 
-<section>
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="images/img1.jpg">
-    <img src="images/img2.jpg">
-    <img src="images/img3.jpg">
-  </div>
+<!-- COUNTDOWN -->
+
+<section class="countdown">
+  <h2>Counting down to our big day</h2>
+  <div class="timer" id="timer"></div>
 </section>
 
-<section>
-  <h2>Venue</h2>
-  <p>Banjara Bhavan, Davanagere</p>
-  <a class="btn" href="https://maps.google.com/?q=Banjara+Bhavan+Davanagere" target="_blank">View Map</a>
+<!-- FOOTER -->
+
+<section class="footer">
+  <h2>We can’t wait to celebrate with you!</h2>
+  <p>We warmly welcome you and your family!</p>
+  <h3>Raghu Manikanta & Harshitha</h3>
 </section>
 
-<section>
-  <h2>RSVP</h2>
-  <a class="btn" href="#">Confirm Attendance</a>
-</section>
+<script>
+const target = new Date("May 3, 2026 07:38:00").getTime();
 
-<!-- Music -->
-<audio id="music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-<button class="music-btn" onclick="toggleMusic()">🎵</button>
+setInterval(()=>{
+  const now = new Date().getTime();
+  const diff = target - now;
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="script.js"></script>
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%(1000*60))/1000);
+
+  document.getElementById("timer").innerHTML =
+    d+"d : "+h+"h : "+m+"m : "+s+"s";
+},1000);
+</script>
 
 </body>
 </html>
